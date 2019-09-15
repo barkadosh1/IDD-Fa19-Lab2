@@ -22,7 +22,7 @@ Include your responses to the bold questions below. Include snippets of code tha
 
 **Take a picture of your soldered panel and add it here!**
 
-<img src="https://github.com/barkadosh1/IDD-Fa19-Lab2/blob/master/IMG_9431.PNG" width="500" height="600">
+<img src="https://github.com/barkadosh1/IDD-Fa19-Lab2/blob/master/IMG_9454.jpeg" width="500" height="500">
 
 ## Part B. Writing to the LCD
  
