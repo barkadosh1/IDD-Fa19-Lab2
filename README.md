@@ -44,6 +44,11 @@ Include your responses to the bold questions below. Include snippets of code tha
 ## Part D. Make your Arduino sing!
 
 **a. How would you change the code to make the song play twice as fast?**
+- divide note duration by 2
+- Talk about how tested both this (figured out this reduces the rest/silence note as well)
+- Used a timer to confirm it actually cut in half from 2276 to 1134
+Serial.begin (9600);
+Serial.print(millis());
  
 **b. What song is playing?**
 
