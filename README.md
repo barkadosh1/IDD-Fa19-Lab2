@@ -33,30 +33,36 @@ Include your responses to the bold questions below. Include snippets of code tha
 **c. What was one mistake you made when wiring up the display? How did you fix it?**
 
 **d. What line of code do you need to change to make it flash your name instead of "Hello World"?**
-  lcd.print("hello, world!");
+
+Within the code, there is a line of code lcd.print("hello, world!") which determines what string value is being flashed on the LCD. Therefore in order to change what is flashing, you simply need to change the string inside of the paranthesees -- I changed it to lcd.print("hello, Bar!").
  
 **e. Include a copy of your Lowly Multimeter code in your lab write-up.**
 
 The code for my Lowly Multimeter and a video of it performing are below.
 [Lowly Multimeter Code](https://github.com/barkadosh1/IDD-Fa19-Lab2/blob/master/Multimeter.ino)
+[Lowly Multimeter Video](https://youtu.be/rp6lIAjKkRA)
 
 
 ## Part C. Using a time-based digital sensor
 
 **Upload a video of your working rotary encoder here.**
 
+A video of my rotary encoder is below. As can be seen in the video, the output is meant to track the count of how many times you turn the knob. After experimenting with turning the knob in both directions, I realized the following: if you turn it one way, it will start counting up away from 0. However, if the knob is turned the other direction, it will jump from 0 to a value of 16383 and continue counting down until the direction of rotation is reversed again.
+[Rotary Encoder](https://youtu.be/tADYrZDOaCU)
 
 ## Part D. Make your Arduino sing!
 
 **a. How would you change the code to make the song play twice as fast?**
-- divide note duration by 2
-- Talk about how tested both this (figured out this reduces the rest/silence note as well)
-- Used a timer to confirm it actually cut in half from 2276 to 1134
-Serial.begin (9600);
-Serial.print(millis());
+
+To achieve this, I tried two different methods. The first involved altering the following line of code: :int noteDuration = 1000 / noteDurations[thisNote];. The second involved altering the following lone of code instead int pauseBetweenNotes = noteDuration * 1.30;. In each case, the way I altered the code was by dividing the noteDuration and the pauseBetweenNotes values by an additional factor of 2 (the rest of the answer will clarify which one of these alterations was actually correct).
+My first test regarding these changes was to numerically measure if they produced the desired result. I added the line "Serial.begin(9600)" before the for loop and added the line "Serial.print(millis())" at the end of the for loop and ran the code for the above two scenarios and for one scenario where neither of durations were altered. For the unaltered scenario, the time output was 2276 milliseconds, while the altered scenarios had time outputs of 1134 and 1136 milliseconds. This confirmed for me that both technically sped the song up to be twice as fast.
+However, after further examining the code, I realized that the melody[] array was accounting for rests/silence as well with values of 0. This meant that when dividing the noteDuration by 2, the notes AND rests were being divided by 2, which was the desired result. When actually playing the song, it sounded correct as well, so this was the correct way to make it play twice as fast. 
+Dividing pauseBetweenNotes by 2, however, seems to just alter the space in between notes and not the actual value of the notes. Therefore, it squishes everything together. Although it cuts the time of the whole song in half, it does not sound correct when the program is run. This is why this alteration was not the correct choice.
  
 **b. What song is playing?**
-Star Wars Opening Credits Theme Song!
+
+Star Wars Opening Credits Theme Song!!! Video below.
+[Star Wars Theme Song!](https://youtu.be/hE0YQCECQww)
 
 
 ## Part E. Make your own timer
