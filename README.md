@@ -35,6 +35,9 @@ Include your responses to the bold questions below. Include snippets of code tha
  
 **e. Include a copy of your Lowly Multimeter code in your lab write-up.**
 
+The code for my Lowly Multimeter and a video of it performing are below.
+[Lowly Multimeter Code](https://github.com/barkadosh1/IDD-Fa19-Lab2/blob/master/Multimeter.ino)
+
 
 ## Part C. Using a time-based digital sensor
 
