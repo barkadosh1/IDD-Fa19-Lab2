@@ -173,9 +173,6 @@ int noteDurations[] = {
 void setup() {
   // set up the LCD's number of columns and rows:
   lcd.begin(16, 2);
-  // Print "Dance Party in:", and set cursor to column 0, line 0
-  lcd.setCursor(0, 0);
-  lcd.print("Dance Party in:");
 
   // Creating the custom characters defined above
   lcd.createChar(0, armsDown);
@@ -189,6 +186,9 @@ void setup() {
 }
 
 void loop() {
+  // Print "Dance Party in:", and set cursor to column 0, line 0
+  lcd.setCursor(0, 0);
+  lcd.print("Dance Party in:");
   // Assigns current time 
   int time_val = millis();
   // Adjusts current time to be between 0 and 10 and subtracts it from 10
@@ -306,5 +306,7 @@ void loop() {
 
     // assigns the current time to this variable to adjust the time value at the start of the next loop
     time_adjust = millis();
+    
+    lcd.clear();
   } 
 }
