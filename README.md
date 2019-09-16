@@ -11,9 +11,9 @@ Pre-Lab Ideas
 7.	Get Up and Stretch: When using a computer for a prolonged period of time, use this device. After initially hitting a button, the device will notify you through light or sound every hour so that you get up and stretch and look away from the screen.
 8.	Eating Contest: With this device, an alarm will sound after a specified time. Within that time, each contestant clicks one of the buttons after each hot dog they eat (to keep score). This will determine who can eat the most hot dogs in a certain timeframe.
 9.	Mental Clock: This device allows for a game. After initially hitting a button, you mentally try to count to 30 and hit the button to try to make the timer stop right at 30 seconds. The device will output how much time actually elapsed between the two presses and whoever gets closest wins the game. 
-10.	 Dog in backyard: Keeps track of how long you let your dog out in the backyard to play. After a specified time, the device will flash or make sound. This not only makes sure your dog gets enough exercise but also makes sure that you don’t forget/leave your doggie friend outside too long. 
+10.	 Dance Party: When prompted, a countdown will start. Once it hits zero, music will play and lights/visuals will accompany it, so that people present can dance. Once the song is over, it will prompt the dancers to see if they want to keep dancing. If they indicate they want to, the countdown will restart and the dancers can dance again to the music.
 
-
+==========================================================================================================================================
 
  
 Include your responses to the bold questions below. Include snippets of code that explain what you did. Deliverables are due next Tuesday. Post your lab reports as README.md pages on your GitHub, and post a link to that on your main class hub page.
@@ -57,9 +57,9 @@ A video of my rotary encoder is below. As can be seen in the video, the output i
 
 **a. How would you change the code to make the song play twice as fast?**
 
-To achieve this, I tried two different methods. The first involved altering the following line of code: :int noteDuration = 1000 / noteDurations[thisNote];. The second involved altering the following lone of code instead int pauseBetweenNotes = noteDuration * 1.30;. In each case, the way I altered the code was by dividing the noteDuration and the pauseBetweenNotes values by an additional factor of 2 (the rest of the answer will clarify which one of these alterations was actually correct).
+To achieve this, I tried two different methods. The first involved altering the following line of code: int noteDuration = 1000 / noteDurations[thisNote];. The second involved altering the following line of code instead: int pauseBetweenNotes = noteDuration * 1.30;. In each case, the way I altered the code was by dividing the noteDuration or the pauseBetweenNotes values by an additional factor of 2 (the rest of the answer will clarify which one of these alterations was actually correct).
 
-My first test regarding these changes was to numerically measure if they produced the desired result. I added the line "Serial.begin(9600)" before the for loop and added the line "Serial.print(millis())" at the end of the for loop and ran the code for the above two scenarios and for one scenario where neither of durations were altered. For the unaltered scenario, the time output was 2276 milliseconds, while the altered scenarios had time outputs of 1134 and 1136 milliseconds. This confirmed for me that both technically sped the song up to be twice as fast.
+My first test regarding these changes was to numerically measure if they produced the desired result. I added the line "Serial.begin(9600)" before the for loop and added the line "Serial.print(millis())" at the end of the for loop and ran the code for the above two scenarios and for one scenario where neither of the variables/durations were altered. For the unaltered scenario, the time output was 2276 milliseconds, while the altered scenarios had time outputs of 1134 and 1136 milliseconds. This confirmed for me that both methods technically sped the song up to be twice as fast.
 
 However, after further examining the code, I realized that the melody[] array was accounting for rests/silence as well with values of 0. This meant that when dividing the noteDuration by 2, the notes AND rests were being divided by 2, which was the desired result. When actually playing the song, it sounded correct as well, so this was the correct way to make it play twice as fast. 
 
@@ -76,4 +76,8 @@ Star Wars Opening Credits Theme Song!!! Video below.
 
 **a. Make a short video showing how your timer works, and what happens when time is up!**
 
+[Dance Timer Code](https://github.com/barkadosh1/IDD-Fa19-Lab2/blob/master/OwnTimer.ino)
+
 **b. Post a link to the completed lab report your class hub GitHub repo.**
+
+Completed.
