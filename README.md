@@ -86,6 +86,8 @@ Star Wars Opening Credits Theme Song!!! Video below.
 
 [Dance Timer Code](https://github.com/barkadosh1/IDD-Fa19-Lab2/blob/master/OwnTimer.ino)
 
+[Dance Timer Video](https://youtu.be/TT4t3e0F5Uo)
+
 **b. Post a link to the completed lab report your class hub GitHub repo.**
 
 Completed.
