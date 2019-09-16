@@ -40,6 +40,10 @@ The other way to confirm this is again by looking at our assembly. Since pin 15 
    
 **c. What was one mistake you made when wiring up the display? How did you fix it?**
 
+The first mistake I made when wiring up my display was with understanding whether the vertical rails were connected or not. I also initially connected both the +5V and +3.3V power sources to the same power rail. However, when re-inspecting my board before plugging it into the computer, I realized that these two power sources needed to be connected to separate points. I also realized that there were 4 separate vertical rails – therefore, I changed my board and connected the +5V to one vertical rail and the +3.3V to another vertical rail. 
+
+Additionally, when I first plugged my board in and uploaded the “Display” program, I did not notice any change. It took me a couple of minutes to realize that my potentiometer was turned all the way up. Once I turned it down and allowed more current to reach the display, the output of the program became visible. 
+
 **d. What line of code do you need to change to make it flash your name instead of "Hello World"?**
 
 Within the code, there is a line of code lcd.print("hello, world!") which determines what string value is being flashed on the LCD. Therefore in order to change what is flashing, you simply need to change the string inside of the paranthesees -- I changed it to lcd.print("hello, Bar!").
@@ -83,6 +87,18 @@ Star Wars Opening Credits Theme Song!!! Video below.
 ## Part E. Make your own timer
 
 **a. Make a short video showing how your timer works, and what happens when time is up!**
+
+I like to think of my timer as a fun dance machine that would be used for study breaks in order to reduce stress and get moving. Once the program is run, a 10-second countdown will begin, accompanied by the words “Dance Party In.” Once it hits zero, two things will simultaneously occur: “Take On Me” will play on the speakers and 16 dancing stick figures will appear on the LCD screen. Once the song ends, the LCD screen will prompt the user to “Push the Button To Dance Again” – once pressed, the countdown and song will repeat. 
+
+For my timer, I tried to make use of several different tools – sound, visual (through the LCD), and a button. For the board, I made use of the same board I had set up during part D and incorporated a button by connecting it to digital pin 0 and ground. 
+
+For my code, I first defined the notes/pitches and used the melodies and note durations arrays for the song “Take On Me,” which I found on a public library online.  Within the loop(), a counter starts at 10 and goes down to 0. However, I initially noticed that the counter would decrement in the following way: “10—90—80—70—60…0.” I realized the 0 was being leftover from when I printed 10 and to account for this, I printed an empty string to the cursor where 0 was whenever the countdown was less than 10.
+
+Once the timer hits 0, a for loop begins playing each note of the “Take On Me” song. However, I wanted to add a visual component to this as well. Each time through the loop, I printed 16 stick figures with their hands down to the LCD. However, every 3rd time through the loop, I would print the stick figures with their arms up, which created the illusion of 16 stick figures dancing along with the music.
+
+Once the for loop finished, I coded the LCD to print “Push the Button to Dance Again :)” and then created a while loop that would continue running until the button was pushed (see code for specifics of how I coded this part). Once it was pushed, I cleared the LCD screen and allowed the entire loop() process to repeat. 
+
+As a final note, I made use of the millis() method for my countdown. I subtracted millis() from 10 so that the display would start at 10 seconds and countdown to 0. However, for any future loops, the millis() function would be much farther past 10 seconds and my display would therefore print negative numbers and never actually reach 0. Therefore, at the end of the loop(), I saved the current millis() value and would add it to the time value at the beginning of the next loop() which fixed the problem.
 
 [Dance Timer Code](https://github.com/barkadosh1/IDD-Fa19-Lab2/blob/master/OwnTimer.ino)
 
