@@ -13,7 +13,7 @@ Pre-Lab Ideas
 9.	Mental Clock: This device allows for a game. After initially hitting a button, you mentally try to count to 30 and hit the button to try to make the timer stop right at 30 seconds. The device will output how much time actually elapsed between the two presses and whoever gets closest wins the game. 
 10.	 Dance Party: When prompted, a countdown will start. Once it hits zero, music will play and lights/visuals will accompany it, so that people present can dance. Once the song is over, it will prompt the dancers to see if they want to keep dancing. If they indicate they want to, the countdown will restart and the dancers can dance again to the music.
 
-==========================================================================================================================================
+===========================================================================================
 
  
 Include your responses to the bold questions below. Include snippets of code that explain what you did. Deliverables are due next Tuesday. Post your lab reports as README.md pages on your GitHub, and post a link to that on your main class hub page.
