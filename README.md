@@ -96,7 +96,7 @@ For my code, I first defined the notes/pitches and used the melodies and note du
 
 Once the timer hits 0, a for loop begins playing each note of the “Take On Me” song. However, I wanted to add a visual component to this as well. Each time through the loop, I printed 16 stick figures with their hands down to the LCD. However, every 3rd time through the loop, I printed the stick figures with their arms up, which created the illusion of 16 stick figures dancing along with the music.
 
-Once the for loop finishes, I coded the LCD to print “Push the Button to Dance Again :)” and then created a while loop that continues running until the button is pushed (see code for specifics of how I coded this part). Once it gets pushed, the LCD screen clear and the entire loop() process repeats. 
+Once the for loop finishes, I coded the LCD to print “Push the Button to Dance Again :)” and then created a while loop that continues running until the button is pushed (see code for specifics of how I coded this part). Once it gets pushed, the LCD screen clears and the entire loop() process repeats. 
 
 As a final note, I made use of the millis() method for my countdown. I subtracted millis() from 10 so that the display started at 10 seconds and counted down to 0. However, for any future loops, the millis() function was much farther past 10 seconds and my display was printing negative numbers and never actually reached 0. To fix this, at the end of the loop(), I saved the current millis() value and added it to the time value at the beginning of the next loop().
 
