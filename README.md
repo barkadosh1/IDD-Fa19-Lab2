@@ -92,7 +92,7 @@ I like to think of my timer as a fun dance machine that would be used for study 
 
 For my timer, I tried to make use of several different tools – sound, visual (through the LCD), and a button. For the board, I made use of the same board I had set up during part D and incorporated a button by connecting it to digital pin 0 and ground. 
 
-For my code, I first defined the notes/pitches and used the melodies and note durations arrays for the song “Take On Me,” which I found on a public library online.  Within the loop(), a counter starts at 10 and goes down to 0. However, I initially noticed that the counter would decrement in the following way: “10—90—80—70—60…0.” I realized the 0 was being leftover from when I printed 10 and to account for this, I printed an empty string to the cursor where 0 was whenever the countdown was less than 10.
+For my code, I first defined the notes/pitches and used the melodies and note durations arrays for the song “Take On Me,” which I found on a public library online.  Within the loop(), a counter starts at 10 and goes down to 0. However, I initially noticed that the counter would decrement in the following way: “10—90—80—70—60…0.” I realized that the 0 was being leftover from when I printed 10 and to account for this, I printed an empty string to the cursor where 0 was whenever the countdown was less than 10.
 
 Once the timer hits 0, a for loop begins playing each note of the “Take On Me” song. However, I wanted to add a visual component to this as well. Each time through the loop, I printed 16 stick figures with their hands down to the LCD. However, every 3rd time through the loop, I would print the stick figures with their arms up, which created the illusion of 16 stick figures dancing along with the music.
 
