@@ -34,7 +34,7 @@ The other way to confirm this is by looking at our assembly. Since pin 2 (VDD) i
 
 **b. What voltage level do you need to power the display backlight?**
 
-The voltage level used to power the display backlight is approximately +3.3V. Similarly, we can also confirm this in two ways. Through the provided data sheet, we see that the operating voltage of the display backlight is +3.2V +/- 0.15V. The data sheet also suggested that pin 15 is where the power for the display backlight is connected and that pin 16 is the ground for the backlight.
+The voltage level used to power the display backlight is approximately +3.3V. Similarly, we can also confirm this in two ways. Through the provided data sheet, we see that the operating voltage of the display backlight is +3.2V +/- 0.15V. The data sheet also suggests that pin 15 is where the power for the display backlight is connected and that pin 16 is the ground for the backlight.
 
 The other way to confirm this is again by looking at our assembly. Since pin 15 is the pin we are using to power our display backlight, we can easily trace it back to the +3.3V connection on the Arduino board, confirming that this is the voltage being used to power the display backlight.
    
